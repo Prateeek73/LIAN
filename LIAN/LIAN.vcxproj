@@ -116,10 +116,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Repositories\DSA\LIAN\LIAN\SFML\include"</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Repositories\DSA\LIAN\LIAN\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio.dll;sfml-graphics.dll;sfml-network.dll;sfml-system.dll;sfml-window.dll</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -130,16 +133,28 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>"C:\Repositories\DSA\LIAN\LIAN\SFML\include"</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Repositories\DSA\LIAN\LIAN\SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-audio.dll;sfml-graphics.dll;sfml-network.dll;sfml-system.dll;sfml-window.dll</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\engine.cpp" />
     <ClCompile Include="LIAN.cpp" />
+    <ClCompile Include="parser\parser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\engine.hpp" />
+    <ClInclude Include="parser\parser.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="settings\settings.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
